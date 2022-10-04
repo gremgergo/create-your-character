@@ -1,0 +1,119 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #2F404D;
+
+    font-family: 'Changa', sans-serif;
+
+    .background {
+        width: 100vw;
+        height: 100vh;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: -1;
+
+    }
+
+    form {        
+        padding: 10px;
+        
+        border: 1px solid #85EBD9;
+        border-radius: 5px;
+        
+        background-color: #3D898D;
+
+        z-index: 1;
+                
+        input {
+            padding: 5px;
+            
+            color: #85EBD9;
+            
+            background-color: #2F404D;
+            
+            border-radius: 5px;
+
+            font-weight: 300;
+            
+            &::placeholder {
+                color: #85EBD9;
+
+                font-weight: 300;
+            }
+        }
+        
+        select {
+            
+            padding: 5px;
+            
+            color: #85EBD9;
+            
+            background-color: #2F404D;
+            
+            border-radius: 5px;
+
+            font-weight: 300;
+            
+        }
+    }
+    
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+                
+        padding: 10px;
+        
+        border: 1px solid #85EBD9;
+        border-radius: 5px;
+        
+        background-color: #3D898D;
+        
+        
+        .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-content: space-evenly;
+        }
+        .character-details {
+            width: 171px;
+            height: 135px;
+
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+                font-weight: 500;
+            }
+
+            .pics {
+                display: flex;
+                flex-direction: row;
+                
+                .pics-genre {
+                    margin-right: 20px;
+                }
+
+                img {
+                    width: 20px;
+                    height: 20px;
+
+                }
+    
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
