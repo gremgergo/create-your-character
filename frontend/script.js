@@ -29,9 +29,9 @@ const formComponent = function() {
       <label for="race">Race
         <select name="race" id="race">
           <option value=" ">Select your Race</option>
-          <option value="the Awoken">the Awoken</option>
-          <option value="the Human">the Human</option>
-          <option value="the Exo">the Exo</option>
+          <option value="theAwoken">theAwoken</option>
+          <option value="theHuman">theHuman</option>
+          <option value="theExo">theExo</option>
         </select>
       </label>
 
@@ -51,13 +51,18 @@ const characterSheetComponent = function() {
         <h1 id="character-name">Your Character Name</h1>
         <div class="pics">
           <div class="pics-genre">
-            <img src="img/male.png" class="pictures hidden" data-img="male">
-            <img src="img/female.png" class="pictures hidden" data-img="female">
+            <img src="img/male.png" class="genre-icon hidden" data-img="male">
+            <img src="img/female.png" class="genre-icon hidden" data-img="female">
           </div>
           <div class="pics-class">
-            <img src="img/Hunter_icon.png" class="icon hidden" data-img="hunter">
-            <img src="img/Titan_icon.png" class="icon hidden" data-img="titan">
-            <img src="img/Warlock_icon.png" class="icon hidden" data-img="warlock">
+            <img src="img/Hunter_icon.png" class="class-icon hidden" data-img="hunter">
+            <img src="img/Titan_icon.png" class="class-icon hidden" data-img="titan">
+            <img src="img/Warlock_icon.png" class="class-icon hidden" data-img="warlock">
+          </div>
+          <div class="pics-race">
+            <img src="img/theAwaken.png" class="race-icon hidden theAwaken" data-img="theAwaken">
+            <img src="img/theExo.png" class="race-icon hidden theExo" data-img="theExo">
+            <img src="img/theHuman.png" class="race-icon hidden theHuman" data-img="theHuman">
           </div>
         </div>
       </div>
@@ -109,22 +114,17 @@ const loadEvent = function() {
   };
 
   
-  // pictures
-  /* const pictureElements = [...document.querySelectorAll(".character-class")];
-  console.log(pictureElements)
-  pictureElements.forEach( element => element.addEventListener('click', classPicture)); */
-
   const pictureGenreSelector = document.querySelector("#genre");
 
   pictureGenreSelector.addEventListener("change", genrePicture);
 
   function genrePicture(event) {
-    const pictureElements = [...document.querySelectorAll(".pictures")];
+    const pictureElements = [...document.querySelectorAll(".genre-icon")];
     const target = event.target;
     const dataId = target.value.toLowerCase();
     const genreImg = document.querySelector(`[data-img = "${dataId}"]`);
 
-    pictureElements.forEach( element => element === genreImg ? element.classList.remove("hidden") : element.classList.add("hidden"));
+    pictureElements.forEach( element => element === genreImg ? element.classList.remove("hidden") : element.classList.add("hidden") );
   };
   
   const pictureClassSelector = document.querySelector("#class");
@@ -132,14 +132,26 @@ const loadEvent = function() {
   pictureClassSelector.addEventListener("change", classPicture);
 
   function classPicture(event) {
-    const pictureElements = [...document.querySelectorAll(".icon")];
+    const pictureElements = [...document.querySelectorAll(".class-icon")];
     const target = event.target;
     const dataId = target.value.toLowerCase();
     const classImg = document.querySelector(`[data-img = "${dataId}"]`);
 
-    pictureElements.forEach( element => element === classImg ? element.classList.remove("hidden") : element.classList.add("hidden"));
+    pictureElements.forEach( element => element === classImg ? element.classList.remove("hidden") : element.classList.add("hidden") );
   };
+  
+  const pictureRaceSelector = document.querySelector("#race");
 
+  pictureRaceSelector.addEventListener("change", racePicture);
+
+  function racePicture(event) {
+    const pictureElements = [...document.querySelectorAll(".race-icon")];
+    const target = event.target;
+    const dataId = target.value.toLowerCase();
+    const raceImg = document.querySelector(`[data-img = "${dataId}"]`);
+
+    pictureElements.forEach( element => element === raceImg ? element.classList.remove("hidden") : element.classList.add("hidden") );
+  };
 
 }
 

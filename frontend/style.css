@@ -135,6 +135,15 @@ body section .character-details .pics img {
   height: 20px;
 }
 
+body section .character-details .pics .pics-class {
+  margin-right: 20px;
+}
+
+body section .character-details .pics .pics-race .theAwaken {
+  width: 20px;
+  height: 25px;
+}
+
 .hidden {
   display: none;
 }
